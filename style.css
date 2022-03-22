@@ -1,0 +1,88 @@
+:root {
+  --tlo-strony: #c3c3c3;
+  --font-color: #000;
+  --linia-border: 0.1rem solid #ff0000;
+  --obrys-tabeli: #ff0000;
+  --font-family: "Roboto", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 0.8rem;
+  background: var(--tlo-strony);
+  color: var(--font-color);
+}
+p {
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "slider slider slider slider"
+    "navbar navbar navbar navbar"
+    "rek glowna glowna glowna"
+    "stopka stopka stopka stopka";
+}
+.slider {
+  grid-area: slider;
+  border: var(--linia-border);
+  height: calc(100vh - 70vh);
+}
+.navbar {
+  grid-area: navbar;
+  border: var(--linia-border);
+  height: calc(100vh - 95vh);
+}
+.glowna {
+  grid-area: glowna;
+  border: var(--linia-border);
+  height: calc(100vh - 40vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rek {
+  grid-area: rek;
+  border: var(--linia-border);
+  height: calc(100vh - 40vh);
+}
+.stopka {
+  grid-area: stopka;
+  border: var(--linia-border);
+  height: calc(100vh - 95vh);
+}
+table {
+  border: 0.1rem double var(--obrys-tabeli);
+  width: 80%;
+}
+tr {
+  line-height: 1.4rem;
+}
+th {
+  text-transform: uppercase;
+}
+th,
+td {
+  min-width: 4rem;
+  border: 0.01rem solid var(--obrys-tabeli);
+}
+tbody tr:nth-child(even) {
+  background-color: #fff;
+  color: #000;
+}
+tbody tr:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
